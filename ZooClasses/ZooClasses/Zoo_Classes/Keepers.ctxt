@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Keepers
+comment0.text=\r\n\ Extention\ of\ Pen\ class,\ Information\ in\ this\ class\ is\ about\ Animals\ in\ the\ Pen.\r\n\r\n\ @author\ (Manasseh\ Boyd)\r\n\ @version\ (01-\ 28/12/2017)\r\n
+comment1.params=Keepers_Name\ Keepers_Pen\ Animal\ length\ width
+comment1.target=Keepers(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ double)
+comment2.params=
+comment2.target=java.lang.String\ getKeepers_Name()
+comment3.params=Keepers_Name
+comment3.target=void\ setKeepers_Name(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getAnimal()
+comment5.params=Animal
+comment5.target=void\ setAnimal(java.lang.String)
+comment6.params=
+comment6.target=void\ Pen_requirements()
+comment7.params=
+comment7.target=void\ displayDetails()
+numComments=8
