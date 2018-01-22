@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class Pen implements Serializable {
 
     private String Type;
-    private int Size;
+    private double Size;
     private Animal[] Animals;
     private Keeper Name;
 
@@ -21,7 +21,7 @@ public class Pen implements Serializable {
         return Type;
     }
 
-    public int getSize(){
+    public double getSize(){
         return Size;
     }
 

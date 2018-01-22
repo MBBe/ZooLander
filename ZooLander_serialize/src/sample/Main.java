@@ -17,13 +17,26 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();*/
 
-   ArrayList<Pen> Pens = new ArryList<Pens>();
-   ArrayList<Pen> Animals = new ArryList<Animals>();
+    //List of Data to draw from
+   ArrayList<Pen> Pens = new ArrayList<Pen>();
+   ArrayList<Animal> Animals = new ArrayList<Animal>();
 
+    //Variables about the Zoo
+    String ZooName = "ZooLander";
+    double ZooSize = 5000;
+    Pen[] ZooPens = new Pen[8];
+    Animal[] ZooAnimals = new Animal[8];
 
-
+    //Method to create Data
+    public void createData(){
+        inputPens();
+        inputAnimals();
     }
 
+    private void inputPens(){
+        Pens.add(new Pens("Dry", 833, "Goat", "Hardip"));
+        Pens.add(new Pens("Petting", 833, "Dog", "Alan"));
+    }
 
     public static void main(String[] args) {
         launch(args);
