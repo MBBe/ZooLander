@@ -1,0 +1,22 @@
+
+data to save
+ 
+1. Keeper name (String)
+2. Name of Keeper Pen (String)
+3. (Keepers) pen (array of Pens)
+	Name of Pen(string)
+	Pen type (String)
+	size of Pen(int)
+4. (Keeper) animals (arrary of animals)
+	Type of Animal(String)
+	number of Animal(String)
+	Animal requirements (array of requirements)
+		Name of Animal
+		Animal Pen type (String)
+		size of Animal (int)                                                                  
+			
+		
+Classes	needed
+
+1.Keeper
+2.
