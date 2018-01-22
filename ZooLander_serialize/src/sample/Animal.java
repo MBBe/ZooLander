@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class Animal implements Serializable {
 
     private String AnimalType;
-    private int Requires;
+    private double Requires;
     private Pen Type;
 
     public Animal(String AnimalType, Pen Type, int Requires) {
@@ -18,7 +18,7 @@ public class Animal implements Serializable {
     }
 
 
-    public int getRequires() {
+    public double getRequires() {
         return Requires;
     }
 

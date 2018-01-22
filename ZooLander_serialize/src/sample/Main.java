@@ -33,9 +33,17 @@ public class Main extends Application {
         inputAnimals();
     }
 
-    private void inputPens(){
-        Pens.add(new Pens("Dry", 833, "Goat", "Hardip"));
-        Pens.add(new Pens("Petting", 833, "Dog", "Alan"));
+    //Method to create all Pens
+    private void inputAnimals(){
+        Animal[] DryPen = (Animals.get(0));
+        Animals.add(new Animal ("Dry", 833, "Goat", "Hardip"));// index 0
+        Animals.add(new Animal("Petting", 833, "Dog", "Alan"));// index 1
+        Animals.add(new Animal( "Dry", 833, "Cat", "Hardip"));// index 2
+    }
+
+    //Method to create all Animals
+    private void inputAnimals(){
+
     }
 
     public static void main(String[] args) {
