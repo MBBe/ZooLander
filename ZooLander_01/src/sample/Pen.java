@@ -46,10 +46,10 @@ public class Pen implements Serializable {
         {
             if (animal.getRequires() >= penSize) {
                 System.out.println(animal.getName() + "can not be added to " + Type + " pen. ");
+                animal.getRequires() - penSize;
 
             }
-            else { (animal.getRequires() - penSize)
-
+            
         }
     }
 }
