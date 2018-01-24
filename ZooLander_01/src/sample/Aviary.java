@@ -10,6 +10,7 @@ public class Aviary extends Pen {
     private double height;
     private Animal[] Animals;
     private Keeper [] Keepers;
+    private double penSize;
 
 
     //@Override
@@ -43,4 +44,12 @@ public class Aviary extends Pen {
     public Keeper[] getKeepers(){
         return Keepers;
     }
+
+    @Override
+    public void PenSize (){
+        penSize = length * width * height;
+
+    }
+
+
 }
