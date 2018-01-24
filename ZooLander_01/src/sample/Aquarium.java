@@ -2,12 +2,13 @@ package sample;
 
 public class Aquarium extends Pen {
 
-        private String Type;
-        private double length;
-        private double width;
-        private double height;
-        private Animal[] Animals;
-        private Keeper [] Keepers;
+    private String Type;
+    private double length;
+    private double width;
+    private double height;
+    private Animal[] Animals;
+    private Keeper [] Keepers;
+    private double penSize;
 
     public void Aquarium(String Type, double length, double width, double height, Animal[] Animals, Keeper[] Keepers) {
         this.Type= Type;
@@ -32,8 +33,11 @@ public class Aquarium extends Pen {
 
     public Animal[] getAnimals(){return Animals;}
 
-    public Keeper[] getKeepers(){
-        return Keepers;
+    public Keeper[] getKeepers(){return Keepers;}
+
+    @Override
+    public void PenSize (){
+        penSize = length * width * height;
     }
 
 }
