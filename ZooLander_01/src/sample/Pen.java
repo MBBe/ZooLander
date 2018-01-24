@@ -25,9 +25,7 @@ public class Pen implements Serializable {
         penSize = length * width;
     }
 
-    public String getType(){
-        return Type;
-    }
+    public String getType(){return Type;}
 
     public double getlength(){ return length; }
 
@@ -46,10 +44,12 @@ public class Pen implements Serializable {
         {
             if (animal.getRequires() >= penSize) {
                 System.out.println(animal.getName() + "can not be added to " + Type + " pen. ");
-                animal.getRequires() - penSize;
 
             }
-            
+            else System.out.println(animal.getName() + "has been added to " + Type +" pen.");
+            penSize -= animal.getRequires(); 
+
         }
     }
 }
+
