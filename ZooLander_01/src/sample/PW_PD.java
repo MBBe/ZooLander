@@ -1,5 +1,7 @@
 package sample;
 
+import sample.Pen;
+
 public class PW_PD extends Pen {
 
     private String Type;
@@ -15,11 +17,11 @@ public class PW_PD extends Pen {
     private double PD_penSize;
 
 
-    private Animal[] Animals;
-    private Keeper [] Keepers;
+    private sample.Animal[] Animals;
+    private sample.Keeper[] Keepers;
 
     public void PW_PD (String Type, double PW_length, double PW_width, double PW_height,
-                       double PD_length, double PD_width, Animal[] Animals, Keeper[] Keepers) {
+                       double PD_length, double PD_width, sample.Animal[] Animals, sample.Keeper[] Keepers) {
         this.Type = Type;
         this.PW_length = PW_length;
         this.PW_width = PW_width;
@@ -42,9 +44,9 @@ public class PW_PD extends Pen {
 
     public double getPD_width() { return PD_width;}
 
-    public Animal[] getAnimals(){return Animals;}
+    public sample.Animal[] getAnimals(){return Animals;}
 
-    public Keeper[] getKeepers(){return Keepers;}
+    public sample.Keeper[] getKeepers(){return Keepers;}
 
     //method to calculate the overall size of the PW_PD Pen
     @Override

@@ -6,7 +6,7 @@ public class Animal implements Serializable {
 
     private String Name;
     private double Requires;
-    //private double volume;
+    private double volume;
 
     public Animal(String Name, double Requires, double volume) {
         this.Name = Name;

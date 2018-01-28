@@ -6,11 +6,11 @@ public class Aquarium extends Pen {
     private double length;
     private double width;
     private double height;
-    private Animal[] Animals;
-    private Keeper [] Keepers;
+    private sample.Animal[] Animals;
+    private sample.Keeper[] Keepers;
     private double penSize;
 
-    public void Aquarium(String Type, double length, double width, double height, Animal[] Animals, Keeper[] Keepers) {
+    public void Aquarium(String Type, double length, double width, double height, sample.Animal[] Animals, sample.Keeper[] Keepers) {
         this.Type= Type;
         this.length = length;
         this.width = width;
@@ -31,9 +31,9 @@ public class Aquarium extends Pen {
 
     public double getheight() { return height;}
 
-    public Animal[] getAnimals(){return Animals;}
+    public sample.Animal[] getAnimals(){return Animals;}
 
-    public Keeper[] getKeepers(){return Keepers;}
+    public sample.Keeper[] getKeepers(){return Keepers;}
 
     @Override
     public void PenSize (){

@@ -5,76 +5,60 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.Classes.*;
+
 
 import java.util.ArrayList;
 
 public class Main extends Application {
 
-    /*@Override
+    @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
-    }
+        primaryStage.setTitle("Welcome to ZooLander, The World's greatest Zoo for really, really, really good looking animals!");
+        primaryStage.setScene(new Scene(root, 725, 575));
+        primaryStage.show();
+}
 
 
-    public static void main(String[] args) {launch(args);
+    public static void main(String[] args) {
+        launch(args);
 
         //List of Data to draw from
-        ArrayList<Keeper> Keepers = new ArrayList<Keeper>();
-        ArrayList<Animal> Animals = new ArrayList<Animal>();
+        ArrayList<sample.Keeper> Keepers = new ArrayList<sample.Keeper>();
+        ArrayList<sample.Animal> Animals = new ArrayList<sample.Animal>();
 
-        //method to create data
-        public void createData() {
-            inputKeepers();
-            inputAnimals();
-        }
 
         String ZooName = "Zoolander";
         int ZooSize = 150000;
-        Keeper [] ZooKeepers = new Keeper[4];
-        Animal [] ZooAnimals = new Animal[8];
-
-        //create data
-        public void createData () {
-            inputKeepers();
-            inputAnimals();
-        }
+        sample.Keeper[] ZooKeepers = new sample.Keeper[4];
+        sample.Animal[] ZooAnimals = new sample.Animal[8];
 
 
-        //method to create all Keepers
-        private void inputKeepers() {
-        Keepers.add(new Keeper("Alex", "Aquarium"));
-        Keepers.add(new Keeper("Hardip", "Dry"));
-        Keepers.add(new Keeper("Alan", "Petting"));
-        Keepers.add(new Keeper("Farhad", "Aviary"));
-        }
+        //Keeper Array
 
-        //method to create all animals
-        private void inputAnimals() {
-            Keeper[] OwlKeeper = (Keeper.get(3));
-            Animals.add(new Animal("Owl", 20, 0));
-            Animals.add(new Animal("Cat", 4, 0));
-            Animals.add(new Animal("Dog", 3.5, 0));
-            Animals.add(new Animal("Sloth", 3, 0));
-            Animals.add(new Animal("Dolphin", 40, 0));
-            Animals.add(new Animal("Hippos", 10, 20));
-            Animals.add(new Animal("Goats", 3, 0));
-            Animals.add(new Animal("Penguins", 2, 4));
-        }
+        Keepers.add(new sample.Keeper("Alex", "Aquarium"));//0
+        Keepers.add(new sample.Keeper("Hardip", "Dry"));//1
+        Keepers.add(new sample.Keeper("Alan", "Petting"));//2
+        Keepers.add(new sample.Keeper("Farhad", "Aviary"));//3
+
+        System.out.println("Keepers: " + Keepers);
 
 
-        /*Pen Dry = new Pen();
-        Dry.PenSize();
-        Dry.addAnimal();
+        //Animal Array
+        //sample.Keeper[] OwlKeeper = (sample.Keeper.get(3));
+        Animals.add(new sample.Animal("Owl", 20, 0));//0
+        Animals.add(new sample.Animal("Cat", 4, 0));//1
+        Animals.add(new sample.Animal("Dog", 3.5, 0));//2
+        Animals.add(new sample.Animal("Sloth", 3, 0));//3
+        Animals.add(new sample.Animal("Dolphin", 40, 0));//4
+        Animals.add(new sample.Animal("Hippos", 10, 20));//5
+        Animals.add(new sample.Animal("Goats", 3, 0));//6
+        Animals.add(new sample.Animal("Penguins", 2, 4));//7
 
-        Aviary OwlPen = new Aviary();
-        OwlPen.PenSize();
+        System.out.println("Animals: " + Animals);
 
-        PW_PD Hippos = new PW_PD();
-        Hippos.PenSize();*/
+
+
 
     }
 }

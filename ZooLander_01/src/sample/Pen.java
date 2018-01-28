@@ -7,11 +7,11 @@ public class Pen implements Serializable {
     private String Type;
     private double length;
     private double width;
-    private Animal[] Animals;
-    private Keeper [] Keepers;
+    private sample.Animal[] Animals;
+    private sample.Keeper[] Keepers;
     private double penSize;
 
-    public void Pen(String Type, double length, double width, Animal[] Animals, Keeper[] Keepers){
+    public void Pen(String Type, double length, double width, sample.Animal[] Animals, sample.Keeper[] Keepers){
         this.Type=Type;
         this.length=length;
         this.width=width;
@@ -31,23 +31,23 @@ public class Pen implements Serializable {
 
     public double getwidth() { return width;}
 
-    public Animal[] getAnimals(){return Animals; }
+    public sample.Animal[] getAnimals(){return Animals; }
 
-    public Keeper[] getKeepers(){
+    public sample.Keeper[] getKeepers(){
         return Keepers;
     }
 
     //method for adding animal to pen
-    public void addAnimal (Animal[] animals) {
+    public void addAnimal (sample.Animal[] animals) {
         //penSize = length * width;
-        for (Animal animal : animals)
+        for (sample.Animal animal : animals)
         {
             if (animal.getRequires() >= penSize) {
                 System.out.println(animal.getName() + "can not be added to " + Type + " pen. ");
 
             }
             else System.out.println(animal.getName() + "has been added to " + Type +" pen.");
-            penSize -= animal.getRequires(); 
+            penSize -= animal.getRequires();
 
         }
     }
