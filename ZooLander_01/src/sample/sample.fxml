@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="514.0" prefWidth="731.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -23,7 +23,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="76.0" prefHeight="353.0" prefWidth="644.0">
+                        <TableView layoutY="101.0" prefHeight="328.0" prefWidth="566.0">
                           <columns>
                             <TableColumn prefWidth="95.0" text="Type" />
                             <TableColumn prefWidth="92.0" text="Requirements" />
@@ -36,15 +36,30 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="99.0" prefHeight="353.0" prefWidth="573.0">
+                        <TableView layoutY="95.0" prefHeight="357.0" prefWidth="578.0">
                           <columns>
                             <TableColumn prefWidth="95.0" text="Name" />
-                            <TableColumn prefWidth="109.0" text="Resposibility" />
+                            <TableColumn prefWidth="109.0" text="Responsibility" />
                           </columns>
                         </TableView>
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Pens">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutY="95.0" prefHeight="357.0" prefWidth="578.0">
+                           <columns>
+                              <TableColumn prefWidth="95.0" text="Type" />
+                              <TableColumn prefWidth="109.0" text="Animal" />
+                              <TableColumn prefWidth="109.0" text="Keeper" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

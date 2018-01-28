@@ -7,7 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
 
 public class Main extends Application {
 
@@ -23,6 +26,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
+
+
+
+
         //List of Data to draw from
         ArrayList<sample.Keeper> Keepers = new ArrayList<sample.Keeper>();
         ArrayList<sample.Animal> Animals = new ArrayList<sample.Animal>();
@@ -35,11 +42,12 @@ public class Main extends Application {
 
 
         //Keeper Array
+        
+            Keepers.add(new sample.Keeper("Alex", "Aquarium"));//0
+            Keepers.add(new sample.Keeper("Hardip", "Dry"));//1
+            Keepers.add(new sample.Keeper("Alan", "Petting"));//2
+            Keepers.add(new sample.Keeper("Farhad", "Aviary"));//3
 
-        Keepers.add(new sample.Keeper("Alex", "Aquarium"));//0
-        Keepers.add(new sample.Keeper("Hardip", "Dry"));//1
-        Keepers.add(new sample.Keeper("Alan", "Petting"));//2
-        Keepers.add(new sample.Keeper("Farhad", "Aviary"));//3
 
         System.out.println("Keepers: " + Keepers);
 
