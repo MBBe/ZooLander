@@ -74,16 +74,16 @@ public class AnimalScene extends Application {
         //deleteButton.setOnAction(e ->deleteButtonClicked());
 
         //Choice Box
-        ChoiceBox<String> choiceBox =new ChoiceBox<>();
+        //ChoiceBox<String> choiceBox =new ChoiceBox<>();
         //get Items returns the ObservableList
-        choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
+        //choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
         //set default Value
-        choiceBox.setValue("Animal");
+        //choiceBox.setValue("Animal");
 
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton, choiceBox);
+        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton /*,choiceBox*/);
 
 
         table = new TableView<>();
@@ -124,14 +124,14 @@ public class AnimalScene extends Application {
 
     //Get all of the products
     private void initializePens(){
-        animals.add(new Animal("Sloths", "Dry", 9.00, 5));
-        animals.add(new Animal("Penguins", "Part Water, part dry", 80.0, 20));
-        animals.add(new Animal("Goats", "Dry", 36.00, 4));
-        animals.add(new Animal("Dogs", "Petting", 85.75, 7));
-        animals.add(new Animal("Owls", "Aviary", 180.00, 3));
-        animals.add(new Animal("Dolphins", "Aquarium", 480.00, 4));
-        animals.add(new Animal("Hippos", "Part Water, part dry", 500.0, 5));
-        animals.add(new Animal("Cats", "Petting", 96.00, 6));
+        animals.add(new Animal("Sloths", "Dry", 3.00, 5));
+        animals.add(new Animal("Penguins", "Part Water, part dry", 2.0, 20));
+        animals.add(new Animal("Goats", "Dry", 3.00, 4));
+        animals.add(new Animal("Dogs", "Petting", 3.5, 7));
+        animals.add(new Animal("Owls", "Aviary", 20, 3));
+        animals.add(new Animal("Dolphins", "Aquarium", 40, 4));
+        animals.add(new Animal("Hippos", "Part Water, part dry", 10, 5));
+        animals.add(new Animal("Cats", "Petting", 4.0, 6));
         animals.add(new Animal("Elephants", "Dry", 405.00, 5));
     }
 }

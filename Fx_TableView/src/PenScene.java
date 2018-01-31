@@ -1,4 +1,4 @@
-/*import javafx.application.Application;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -12,10 +12,9 @@ import javafx.stage.Stage;
 public class PenScene extends Application {
 
     Stage window;
-    //Scene scene1, scene2;
-    TableView<Animal> table;
-    TextField animalInput, PenInput, SizeInput, QuantityInput;
-    ObservableList<Animal> pens = FXCollections.observableArrayList();
+    TableView<Pen> table;
+    TextField nameInput, sizeInput, animalsInput;
+    ObservableList<Pen> pens = FXCollections.observableArrayList();
 
     public static void main (String[] args) {
         launch(args);
@@ -24,48 +23,42 @@ public class PenScene extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("ZooLander Zoo");
-        initializePens();
+        window.setTitle("ZooLander Zoo - Pens");
+        initializePen();
         showTable();
     }
 
     private void showTable (){
 
+        //Name column
+        TableColumn<Pen, String> NameColumn = new TableColumn<>("Name");
+        NameColumn.setMinWidth(200);
+        NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+
+        //Size column
+        TableColumn<Pen, Double> SizeColumn = new TableColumn<>("Pen Size");
+        SizeColumn.setMinWidth(200);
+        SizeColumn.setCellValueFactory(new PropertyValueFactory<>("Size"));
+
         //Animal column
-        TableColumn<Animal, String> AnimalColumn = new TableColumn<>("Animal");
-        AnimalColumn.setMinWidth(200);
+        TableColumn<Pen, String> AnimalColumn = new TableColumn<>("Animal Size");
+        AnimalColumn.setMinWidth(100);
         AnimalColumn.setCellValueFactory(new PropertyValueFactory<>("Animal"));
 
-        //PenType column
-        TableColumn<Animal, String> PenTypeColumn = new TableColumn<>("Pen Type");
-        PenTypeColumn.setMinWidth(200);
-        PenTypeColumn.setCellValueFactory(new PropertyValueFactory<>("PenType"));
-
-        //PenSize column
-        TableColumn<Animal, Double> PenSizeColumn = new TableColumn<>("Pen Size");
-        PenSizeColumn.setMinWidth(100);
-        PenSizeColumn.setCellValueFactory(new PropertyValueFactory<>("PenSize"));
-
-        //Quantity column
-        TableColumn<Animal, String> QuantityColumn = new TableColumn<>("Quantity");
-        QuantityColumn.setMinWidth(100);
-        QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
 
         //Name input
-        //animalInput, PenInput, SizeInput, QuantityInput
-        animalInput = new TextField();
-        animalInput.setPromptText("add animal");
-        animalInput.setMinWidth(100);
+        //nameInput, sizeInput, animalInput
+        nameInput = new TextField();
+        nameInput.setPromptText("add Pen");
+        nameInput.setMinWidth(100);
 
-        //pen input
-        PenInput = new TextField();
-        PenInput.setPromptText("add Pen");
+        //size input
+        sizeInput = new TextField();
+        sizeInput.setPromptText("add Pen size");
 
-        SizeInput = new TextField();
-        SizeInput.setPromptText("add Size");
+        animalsInput = new TextField();
+        animalsInput.setPromptText("add Animal");
 
-        QuantityInput = new TextField();
-        QuantityInput.setPromptText ("add Quantity");
 
         //Button
         Button addButton = new Button("Add");
@@ -74,22 +67,22 @@ public class PenScene extends Application {
         //deleteButton.setOnAction(e ->deleteButtonClicked());
 
         //Choice Box
-        ChoiceBox<String> choiceBox =new ChoiceBox<>();
+        //ChoiceBox<String> choiceBox =new ChoiceBox<>();
         //get Items returns the ObservableList
-        choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
+        //choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
         //set default Value
-        choiceBox.setValue("Animal");
+        //choiceBox.setValue("Animal");
 
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton, choiceBox);
+        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput);
 
 
         table = new TableView<>();
 
         table.setItems(pens);
-        table.getColumns().addAll(AnimalColumn, PenTypeColumn, PenSizeColumn, QuantityColumn);
+        table.getColumns().addAll(NameColumn, SizeColumn, AnimalColumn);
 
         VBox vBox = new VBox();
         vBox.getChildren().addAll(table, hBox);
@@ -101,37 +94,35 @@ public class PenScene extends Application {
     }
 
     //get the value of the item from the choice Box
-    /*private void getChoice(ChoiceBox<String> choiceBox){
+     private void getChoice(ChoiceBox<String> choiceBox){
         String food = choiceBox.getValue();
         System.out.print(food);
-    }*/
+    }
 
     //Add button clicked
-    /*public void addButtonClicked(){
-        Animal pen = new Animal();
-        pen.setAnimal(animalInput.getText());
-        pen.setPenType(PenInput.getText());
-        pen.setPenSize(Double.parseDouble(SizeInput.getText()));
-        pen.setQuantity(Integer.parseInt(QuantityInput.getText()));
+    public void addButtonClicked(){
+        Pen pen = new Pen();
+        pen.setName(nameInput.getText());
+        pen.setAnimal(animalsInput.getText());
+        pen.setSize(Double.parseDouble(sizeInput.getText()));
+
         pens.add(pen);
-        animalInput.clear();
-        PenInput.clear();
-        SizeInput.clear();
-        QuantityInput.clear();
+        nameInput.clear();
+        sizeInput.clear();
+        animalsInput.clear();
         showTable();
 
     }
 
     //Get all of the products
-    private void initializePens(){
-        pens.add(new Animal("Sloths", "Dry", 9.00, 5));
-        pens.add(new Animal("Penguins", "Part Water, part dry", 80.0, 20));
-        pens.add(new Animal("Goats", "Dry", 36.00, 4));
-        pens.add(new Animal("Dogs", "Petting", 85.75, 7));
-        pens.add(new Animal("Owls", "Aviary", 180.00, 3));
-        pens.add(new Animal("Dolphins", "Aquarium", 480.00, 4));
-        pens.add(new Animal("Hippos", "Part Water, part dry", 500.0, 5));
-        pens.add(new Animal("Cats", "Petting", 96.00, 6));
-        pens.add(new Animal("Elephants", "Dry", 405.00, 5));
+    private void initializePen(){
+        pens.add(new Pen("Dry", "Sloths", 100));
+        pens.add(new Pen("Dry", "Goats", 100));
+        pens.add(new Pen("Dry", "Cats",100));
+        pens.add(new Pen("Petting", "Dogs",100));
+        pens.add(new Pen("Aviary", "Owls", 100));
+        pens.add(new Pen("Aquarium", "Dolphins", 100));
+        pens.add(new Pen("Part wet, Part dry", "Penguins", 100));
+        pens.add(new Pen("Part wet, Part dry", "Hippos", 100));
     }
-}*/
+}

@@ -31,7 +31,7 @@ public class Main extends Application {
 
 
         //Button 1&2 &3 FXMLLoader.load(getClass().getResource(
-        Label label1 = new Label ("Animals at ZooLander Zoo");
+        //Label label1 = new Label ("Animals at ZooLander Zoo");
         Button button1 = new Button ("Animal");
         Button button2 = new Button ("Keepers");
         Button button3 = new Button ("Pens");
@@ -52,6 +52,36 @@ public class Main extends Application {
            }
        });
 
+        /*button2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                //System.out.println("Animal");
+                try {
+                    Stage s2 = new Stage();
+                    PenScene c = new PenScene();
+                    c.start(s2);
+                }catch(Exception e){
+
+                }
+                //setLoggedInUser(textUser.getText());
+                //stage.close(); // return to main window
+            }
+        }); */
+
+        /*button3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                //System.out.println("Animal");
+                try {
+                    Stage s3 = new Stage();
+                    KeeperScene c = new KeeperScene();
+                    c.start(s3);
+                }catch(Exception e){
+
+                }
+                //setLoggedInUser(textUser.getText());
+                //stage.close(); // return to main window
+            }
+        }); */
+
 
 
         //button3.setOnAction(e ->window.setScene(animalScene));
@@ -60,7 +90,7 @@ public class Main extends Application {
 
         //Layout 1 - children are laid out in vertical column
         HBox layout1 = new HBox(20);
-        layout1.getChildren().addAll(label1, button1, button2, button3);
+        layout1.getChildren().addAll(button1, button2, button3);
         scene1 = new Scene (layout1, 600, 300);
 
         //Button 4

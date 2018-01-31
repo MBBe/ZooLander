@@ -1,18 +1,21 @@
-/*public class Pen {
+public class Pen {
 
 
     private String Name;
     private double Size;
+    private String Animal;
 
     public Pen(){
         this.Name = "";
-        this.Size = "";
+        this.Size = 0;
+        this.Animal = "";
 
     }
 
-    public Animal(String Name, double Size){
+    public Pen(String Name, String Animal, double Size){
         this.Name = Name;
         this.Size = Size;
+        this.Animal = Animal;
     }
 
     public String getName() {
@@ -25,32 +28,22 @@
         this.Name = Name;
     }
 
-    public String getPenType(){
+    public double getSize(){
 
-        return PenType;
+        return Size;
     }
 
-    public void setPenType(String PenType){
+    public void setSize(double Size){
 
-        this.PenType = PenType;
+        this.Size = Size;
     }
 
-    public double getPenSize(){
-
-        return PenSize;
+    public String getAnimal(){
+        return Animal;
     }
 
-    public void setPenSize(double PenSize){
-
-        this.PenSize = PenSize;
+    public void setAnimal() {
+        this.Animal = Animal;
     }
 
-    public int getQuantity(){
-        return Quantity;
-    }
-
-    public void setQuantity(int Quantity){
-
-        this.Quantity = Quantity;
-    }
-}*/
+}
