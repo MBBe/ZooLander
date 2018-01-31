@@ -1,6 +1,3 @@
-/**
- * Created by Manasseh on 23/12/2017.
- */
 public class Pens{
 
     private String Animal;

@@ -1,15 +1,9 @@
-/**
- * Created by Manasseh on 23/12/2017.
- */
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,6 +14,7 @@ public class Main extends Application {
     Stage window;
     //Scene scene1, scene2;
     TableView<Pens> table;
+    TextField animalInput, PenInput, SizeInput, QuantityInput;
 
     public static void main(String[] args) {
 
@@ -51,18 +46,68 @@ public class Main extends Application {
         QuantityColumn.setMinWidth(100);
         QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
 
+        //Name input
+        //animalInput, PenInput, SizeInput, QuantityInput
+        animalInput = new TextField();
+        animalInput.setPromptText("add animal");
+        animalInput.setMinWidth(100);
+
+        //pen input
+        PenInput = new TextField();
+        PenInput.setPromptText("add Pen");
+
+        SizeInput = new TextField();
+        SizeInput.setPromptText("add Size");
+
+        QuantityInput = new TextField();
+        QuantityInput.setPromptText ("add Quantity");
+
+        //Button
+        Button addButton = new Button("Add");
+        addButton.setOnAction(e -> addButtonClicked());
+        Button deleteButton = new Button("Delete");
+        deleteButton.setOnAction(e ->deleteButtonClicked());
+
+        //Choice Box
+        ChoiceBox<String> choiceBox =new ChoiceBox<>();
+        //get Items returns the ObservableList
+        choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
+        //set default Value
+        choiceBox.setValue("Animal");
+
+        HBox hBox = new HBox();
+        hBox.setPadding(new Insets(40,40,40,40));
+        hBox.setSpacing(10);
+        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton, choiceBox);
+
+
         table = new TableView<>();
         table.setItems(getPens());
         table.getColumns().addAll(AnimalColumn, PenTypeColumn, PenSizeColumn, QuantityColumn);
 
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(table);
+        vBox.getChildren().addAll(table, hBox);
 
         Scene scene = new Scene(vBox);
         window.setScene(scene);
         window.show();
 
     }
+
+    //get the value of the item from the choice Box
+    /*private void getChoice(ChoiceBox<String> choiceBox){
+        String food = choiceBox.getValue();
+        System.out.print(food);
+    }*/
+
+    //Add button clicked
+    public void addButtonClicked(){
+        Pens pen = new Pens();
+        Pens.setAnimal(animalInput.getText);
+        
+
+    }
+
     //Get all of the products
     public ObservableList<Pens> getPens(){
         ObservableList<Pens> pens = FXCollections.observableArrayList();
@@ -78,3 +123,4 @@ public class Main extends Application {
         return pens;
     }
 }
+
