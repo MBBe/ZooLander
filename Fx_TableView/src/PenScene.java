@@ -119,7 +119,7 @@ public class PenScene extends Application {
 
     //Get all of the products
     private void initializePen(){
-        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
+        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {

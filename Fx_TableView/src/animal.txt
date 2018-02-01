@@ -1,8 +1,8 @@
-Dry,Sloths,100
-Dry,Goats,100
-Dry,Cats,100
-Petting,Dogs,100
-Aviary,Owls,100
-Aquarium,Dolphins,100
-Part Water Part Dry,Penguins,100
-Part Water Part Dry,Hippos,100
+Sloths,Dry,3,5
+Penguins,Part Wet Part Dry,2,20
+Goats,Dry,3,4
+Dogs,Petting,3.5,7
+Owls,Aviary,20,3
+Dolphins,Aquarium,40,4
+Hippos,Part Water Part Dry,10,5
+Cats,Petting,4,6

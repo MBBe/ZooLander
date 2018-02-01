@@ -9,6 +9,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class AnimalScene extends Application {
 
     Stage window;
@@ -124,7 +127,21 @@ public class AnimalScene extends Application {
 
     //Get all of the products
     private void initializePens(){
-        animals.add(new Animal("Sloths", "Dry", 3.00, 5));
+        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                String[] s=line.split(",");
+                double animalSize = Double.parseDouble(s[2]);
+                int quantity = Integer.parseInt(s[3]);
+                animals.add(new Animal(s[0],s[1],animalSize,quantity));
+            }
+        }catch(Exception e){
+
+        }
+
+        /*animals.add(new Animal("Sloths", "Dry", 3.00, 5));
         animals.add(new Animal("Penguins", "Part Water, part dry", 2.0, 20));
         animals.add(new Animal("Goats", "Dry", 3.00, 4));
         animals.add(new Animal("Dogs", "Petting", 3.5, 7));
@@ -132,7 +149,7 @@ public class AnimalScene extends Application {
         animals.add(new Animal("Dolphins", "Aquarium", 40, 4));
         animals.add(new Animal("Hippos", "Part Water, part dry", 10, 5));
         animals.add(new Animal("Cats", "Petting", 4.0, 6));
-        animals.add(new Animal("Elephants", "Dry", 405.00, 5));
+        animals.add(new Animal("Elephants", "Dry", 405.00, 5));*/
     }
 }
 
