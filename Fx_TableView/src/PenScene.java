@@ -9,6 +9,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class PenScene extends Application {
 
     Stage window;
@@ -116,13 +119,27 @@ public class PenScene extends Application {
 
     //Get all of the products
     private void initializePen(){
-        pens.add(new Pen("Dry", "Sloths", 100));
+        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                String[] s=line.split(",");
+                //Double[] d=line.split(",");
+                double penSize = Double.parseDouble(s[2]);
+                pens.add(new Pen(s[0],s[1],penSize));
+            }
+        }catch(Exception e){
+
+        }
+
+        /*pens.add(new Pen("Dry", "Sloths", 100));
         pens.add(new Pen("Dry", "Goats", 100));
         pens.add(new Pen("Dry", "Cats",100));
         pens.add(new Pen("Petting", "Dogs",100));
         pens.add(new Pen("Aviary", "Owls", 100));
         pens.add(new Pen("Aquarium", "Dolphins", 100));
         pens.add(new Pen("Part wet, Part dry", "Penguins", 100));
-        pens.add(new Pen("Part wet, Part dry", "Hippos", 100));
+        pens.add(new Pen("Part wet, Part dry", "Hippos", 100));*/
     }
 }

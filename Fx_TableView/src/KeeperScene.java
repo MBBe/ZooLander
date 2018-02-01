@@ -8,6 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.io.*;
 
 public class KeeperScene extends Application {
 
@@ -108,10 +109,21 @@ public class KeeperScene extends Application {
 
     //Get all of the products
     private void initializePen(){
-        keepers.add(new Keeper("Hardip", "Dry"));
+        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\keeper.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                String[] s=line.split(",");
+                keepers.add(new Keeper(s[0],s[1]));
+            }
+        }catch(Exception e){
+
+        }
+        /*keepers.add(new Keeper("Hardip", "Dry"));
         keepers.add(new Keeper("Alex", "Aquarium, part water, part dry pen"));
         keepers.add(new Keeper("Farhad", "Aviary"));
-        keepers.add(new Keeper("Allan", "Petting Pen"));
+        keepers.add(new Keeper("Allan", "Petting Pen"));*/
 
     }
 }
