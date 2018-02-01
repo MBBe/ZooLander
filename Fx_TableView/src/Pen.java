@@ -42,7 +42,7 @@ public class Pen {
         return Animal;
     }
 
-    public void setAnimal() {
+    public void setAnimal(String Animal) {
         this.Animal = Animal;
     }
 

@@ -31,7 +31,7 @@ public class PenScene extends Application {
     private void showTable (){
 
         //Name column
-        TableColumn<Pen, String> NameColumn = new TableColumn<>("Name");
+        TableColumn<Pen, String> NameColumn = new TableColumn<>("Pen Type");
         NameColumn.setMinWidth(200);
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
 
@@ -41,7 +41,7 @@ public class PenScene extends Application {
         SizeColumn.setCellValueFactory(new PropertyValueFactory<>("Size"));
 
         //Animal column
-        TableColumn<Pen, String> AnimalColumn = new TableColumn<>("Animal Size");
+        TableColumn<Pen, String> AnimalColumn = new TableColumn<>("Animals");
         AnimalColumn.setMinWidth(100);
         AnimalColumn.setCellValueFactory(new PropertyValueFactory<>("Animal"));
 
@@ -76,7 +76,7 @@ public class PenScene extends Application {
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput);
+        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, addButton, deleteButton);
 
 
         table = new TableView<>();

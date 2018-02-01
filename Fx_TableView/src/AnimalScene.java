@@ -42,9 +42,9 @@ public class AnimalScene extends Application {
         PenTypeColumn.setCellValueFactory(new PropertyValueFactory<>("PenType"));
 
         //PenSize column
-        TableColumn<Animal, Double> PenSizeColumn = new TableColumn<>("Pen Size");
+        TableColumn<Animal, Double> PenSizeColumn = new TableColumn<>("Animal Size");
         PenSizeColumn.setMinWidth(100);
-        PenSizeColumn.setCellValueFactory(new PropertyValueFactory<>("PenSize"));
+        PenSizeColumn.setCellValueFactory(new PropertyValueFactory<>("AnimalSize"));
 
         //Quantity column
         TableColumn<Animal, String> QuantityColumn = new TableColumn<>("Quantity");
@@ -83,7 +83,7 @@ public class AnimalScene extends Application {
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton /*,choiceBox*/);
+        hBox.getChildren().addAll(animalInput, PenInput, SizeInput, QuantityInput, addButton, deleteButton);
 
 
         table = new TableView<>();
@@ -111,7 +111,7 @@ public class AnimalScene extends Application {
         Animal pen = new Animal();
         pen.setAnimal(animalInput.getText());
         pen.setPenType(PenInput.getText());
-        pen.setPenSize(Double.parseDouble(SizeInput.getText()));
+        pen.setAnimalSize(Double.parseDouble(SizeInput.getText()));
         pen.setQuantity(Integer.parseInt(QuantityInput.getText()));
         animals.add(pen);
         animalInput.clear();

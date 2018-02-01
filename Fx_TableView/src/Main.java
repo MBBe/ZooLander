@@ -52,12 +52,12 @@ public class Main extends Application {
            }
        });
 
-        /*button2.setOnAction(new EventHandler<ActionEvent>() {
+        button2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 //System.out.println("Animal");
                 try {
                     Stage s2 = new Stage();
-                    PenScene c = new PenScene();
+                    KeeperScene c = new KeeperScene();
                     c.start(s2);
                 }catch(Exception e){
 
@@ -65,14 +65,14 @@ public class Main extends Application {
                 //setLoggedInUser(textUser.getText());
                 //stage.close(); // return to main window
             }
-        }); */
+        });
 
-        /*button3.setOnAction(new EventHandler<ActionEvent>() {
+        button3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 //System.out.println("Animal");
                 try {
                     Stage s3 = new Stage();
-                    KeeperScene c = new KeeperScene();
+                    PenScene c = new PenScene();
                     c.start(s3);
                 }catch(Exception e){
 
@@ -80,7 +80,7 @@ public class Main extends Application {
                 //setLoggedInUser(textUser.getText());
                 //stage.close(); // return to main window
             }
-        }); */
+        });
 
 
 

@@ -2,20 +2,20 @@ public class Animal {
 
     private String Animal;
     private String PenType;
-    private double PenSize;
+    private double AnimalSize;
     private int Quantity;
 
     public Animal(){
         this.Animal = "";
         this.PenType = "";
-        this.PenSize = 0;
+        this.AnimalSize = 0;
         this.Quantity = 0;
     }
 
-    public Animal(String Animal, String PenType, double PenSize, int Quantity){
+    public Animal(String Animal, String PenType, double AnimalSize, int Quantity){
         this.Animal = Animal;
         this.PenType = PenType;
-        this.PenSize = PenSize;
+        this.AnimalSize = AnimalSize;
         this. Quantity = Quantity;
     }
 
@@ -39,14 +39,14 @@ public class Animal {
         this.PenType = PenType;
     }
 
-    public double getPenSize(){
+    public double getAnimalSize(){
 
-        return PenSize;
+        return AnimalSize;
     }
 
-    public void setPenSize(double PenSize){
+    public void setAnimalSize(double AnimalSize){
 
-        this.PenSize = PenSize;
+        this.AnimalSize = AnimalSize;
     }
 
     public int getQuantity(){
