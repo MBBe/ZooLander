@@ -9,15 +9,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 public class PenScene extends Application {
 
     Stage window;
     TableView<Pen> table;
-    TextField nameInput, sizeInput, animalsInput;
+    TextField nameInput, sizeInput, animalsInput, keeperInput;
     ObservableList<Pen> pens = FXCollections.observableArrayList();
+    String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
 
     public static void main (String[] args) {
         launch(args);
@@ -48,6 +48,11 @@ public class PenScene extends Application {
         AnimalColumn.setMinWidth(100);
         AnimalColumn.setCellValueFactory(new PropertyValueFactory<>("Animal"));
 
+        //Keeper column
+        TableColumn<Pen, String> KeeperColumn = new TableColumn<>("Assign Keeper");
+        KeeperColumn.setMinWidth(200);
+        KeeperColumn.setCellValueFactory(new PropertyValueFactory<>("Keeper"));
+
 
         //Name input
         //nameInput, sizeInput, animalInput
@@ -61,6 +66,9 @@ public class PenScene extends Application {
 
         animalsInput = new TextField();
         animalsInput.setPromptText("add Animal");
+
+        keeperInput = new TextField();
+        keeperInput.setPromptText("add Keeper");
 
 
         //Button
@@ -79,13 +87,13 @@ public class PenScene extends Application {
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, addButton, deleteButton);
+        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, keeperInput, addButton, deleteButton);
 
 
         table = new TableView<>();
 
         table.setItems(pens);
-        table.getColumns().addAll(NameColumn, SizeColumn, AnimalColumn);
+        table.getColumns().addAll(NameColumn, SizeColumn, AnimalColumn, KeeperColumn);
 
         VBox vBox = new VBox();
         vBox.getChildren().addAll(table, hBox);
@@ -108,18 +116,22 @@ public class PenScene extends Application {
         pen.setName(nameInput.getText());
         pen.setAnimal(animalsInput.getText());
         pen.setSize(Double.parseDouble(sizeInput.getText()));
+        pen.setKeeper(keeperInput.getText());
 
         pens.add(pen);
+        addToFile(nameInput.getText(), animalsInput.getText(), sizeInput.getText(), keeperInput.getText());
         nameInput.clear();
         sizeInput.clear();
         animalsInput.clear();
+        keeperInput.clear();
         showTable();
+
 
     }
 
     //Get all of the products
     private void initializePen(){
-        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
+
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -127,11 +139,12 @@ public class PenScene extends Application {
                 String[] s=line.split(",");
                 //Double[] d=line.split(",");
                 double penSize = Double.parseDouble(s[2]);
-                pens.add(new Pen(s[0],s[1],penSize));
+                pens.add(new Pen(s[0],s[1],s[3],penSize));
             }
         }catch(Exception e){
 
         }
+
 
         /*pens.add(new Pen("Dry", "Sloths", 100));
         pens.add(new Pen("Dry", "Goats", 100));
@@ -142,4 +155,27 @@ public class PenScene extends Application {
         pens.add(new Pen("Part wet, Part dry", "Penguins", 100));
         pens.add(new Pen("Part wet, Part dry", "Hippos", 100));*/
     }
+    private void addToFile (String name, String animal, String size, String keeper){
+        BufferedWriter bw = null;
+
+        try {
+            // APPEND MODE SET HERE
+            bw = new BufferedWriter(new FileWriter(file, true));
+            bw.write(name + "," + animal + "," + size + "," + keeper);
+            bw.newLine();
+            bw.flush();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {                       // always close the file
+            if (bw != null) try {
+                bw.close();
+            } catch (IOException ioe2) {
+                // just ignore it
+            }
+        } // end try/catch/finally
+
+    }
+
+
+
 }
