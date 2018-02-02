@@ -17,6 +17,7 @@ public class PenScene extends Application {
     TableView<Pen> table;
     TextField nameInput, sizeInput, animalsInput, keeperInput;
     ObservableList<Pen> pens = FXCollections.observableArrayList();
+    //ObservableList<Pen> penSelected, allPens;
     String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
 
     public static void main (String[] args) {

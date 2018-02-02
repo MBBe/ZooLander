@@ -111,14 +111,14 @@ public class AnimalScene extends Application {
 
     //Add button clicked
     public void addButtonClicked(){
-        Animal pen = new Animal();
-        pen.setAnimal(animalInput.getText());
-        pen.setPenType(PenInput.getText());
-        pen.setAnimalSize(Double.parseDouble(SizeInput.getText()));
-        pen.setQuantity(Integer.parseInt(QuantityInput.getText()));
+        Animal animal = new Animal();
+        animal.setAnimal(animalInput.getText());
+        animal.setPenType(PenInput.getText());
+        animal.setAnimalSize(Double.parseDouble(SizeInput.getText()));
+        animal.setQuantity(Integer.parseInt(QuantityInput.getText()));
 
-        animals.add(pen);
-        //addToFile(animalInput.getText(), PenInput.getText(), SizeInput.getText(), QuantityInput.getText());
+        animals.add(animal);
+        addToFile(animalInput.getText(), PenInput.getText(), SizeInput.getText(), QuantityInput.getText());
         animalInput.clear();
         PenInput.clear();
         SizeInput.clear();
@@ -154,7 +154,7 @@ public class AnimalScene extends Application {
         animals.add(new Animal("Elephants", "Dry", 405.00, 5));*/
     }
 
-    private void addToFile (String animal, String penType, double animalSize, int quantity){
+    private void addToFile (String animal, String penType, String animalSize, String quantity){
         BufferedWriter bw = null;
 
         try {
