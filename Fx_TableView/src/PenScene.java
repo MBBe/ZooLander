@@ -75,7 +75,7 @@ public class PenScene extends Application {
         Button addButton = new Button("Add");
         addButton.setOnAction(e -> addButtonClicked());
         Button deleteButton = new Button("Delete");
-        //deleteButton.setOnAction(e ->deleteButtonClicked());
+        deleteButton.setOnAction(e ->deleteButtonClicked());
 
         //Choice Box
         //ChoiceBox<String> choiceBox =new ChoiceBox<>();
@@ -127,6 +127,15 @@ public class PenScene extends Application {
         showTable();
 
 
+    }
+
+    //Delete button clicked
+    public void deleteButtonClicked(){
+        ObservableList<Pen> penSelected, allPens;
+        allPens = table.getItems();
+        penSelected = table.getSelectionModel().getSelectedItems();
+
+        penSelected.forEach(allPens::remove);
     }
 
     //Get all of the products

@@ -114,7 +114,7 @@ public class Main extends Application {
         //scene3 = new Scene(layout3, 600, 300);
 
         window.setScene(scene1);
-        window.setTitle("ZooLander Zoo");
+        window.setTitle("Welcome to ZooLander Zoo- The World's no. 1 Internet Famous Zoo for really, really, really good looking Animals! ");
         window.show();
 
     }

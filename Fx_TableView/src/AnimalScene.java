@@ -9,8 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 public class AnimalScene extends Application {
 
@@ -18,6 +17,7 @@ public class AnimalScene extends Application {
     //Scene scene1, scene2;
     TableView<Animal> table;
     TextField animalInput, PenInput, SizeInput, QuantityInput;
+    String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
     ObservableList<Animal> animals = FXCollections.observableArrayList();
 
     /*public static void main (String[] args) {
@@ -27,7 +27,7 @@ public class AnimalScene extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("ZooLander Zoo");
+        window.setTitle("ZooLander Zoo - Animals");
         initializePens();
         showTable();
     }
@@ -116,7 +116,9 @@ public class AnimalScene extends Application {
         pen.setPenType(PenInput.getText());
         pen.setAnimalSize(Double.parseDouble(SizeInput.getText()));
         pen.setQuantity(Integer.parseInt(QuantityInput.getText()));
+
         animals.add(pen);
+        //addToFile(animalInput.getText(), PenInput.getText(), SizeInput.getText(), QuantityInput.getText());
         animalInput.clear();
         PenInput.clear();
         SizeInput.clear();
@@ -127,7 +129,7 @@ public class AnimalScene extends Application {
 
     //Get all of the products
     private void initializePens(){
-        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
+
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -150,6 +152,27 @@ public class AnimalScene extends Application {
         animals.add(new Animal("Hippos", "Part Water, part dry", 10, 5));
         animals.add(new Animal("Cats", "Petting", 4.0, 6));
         animals.add(new Animal("Elephants", "Dry", 405.00, 5));*/
+    }
+
+    private void addToFile (String animal, String penType, double animalSize, int quantity){
+        BufferedWriter bw = null;
+
+        try {
+            // APPEND MODE SET HERE
+            bw = new BufferedWriter(new FileWriter(file, true));
+            bw.write(animal + "," + penType + "," + animalSize + "," + quantity);
+            bw.newLine();
+            bw.flush();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {                       // always close the file
+            if (bw != null) try {
+                bw.close();
+            } catch (IOException ioe2) {
+                // just ignore it
+            }
+        } // end try/catch/finally
+
     }
 }
 

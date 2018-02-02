@@ -8,3 +8,5 @@ Part Water Part Dry,Penguins,100,Alex
 Part Water Part Dry,Hippos,100,Alex
 Dry,Hippo,100,Alex
 Aviary,Owl,100,Farhad
+Dry,Dog,100,Hardip
+Cage,Eagle,50,Manasseh

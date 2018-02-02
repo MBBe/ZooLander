@@ -15,6 +15,7 @@ public class KeeperScene extends Application {
     Stage window;
     TableView<Keeper> table;
     TextField KeeperNameInput, KeeperPensInput;
+    String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\keeper.txt";
     ObservableList<Keeper> keepers = FXCollections.observableArrayList();
 
     public static void main (String[] args) {
@@ -101,6 +102,7 @@ public class KeeperScene extends Application {
         keeper.setKeeperPens(KeeperPensInput.getText());
 
         keepers.add(keeper);
+        addToFile(KeeperNameInput.getText(), KeeperPensInput.getText());
         KeeperNameInput.clear();
         KeeperPensInput.clear();
         showTable();
@@ -109,7 +111,7 @@ public class KeeperScene extends Application {
 
     //Get all of the products
     private void initializePen(){
-        String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\keeper.txt";
+
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -124,6 +126,27 @@ public class KeeperScene extends Application {
         keepers.add(new Keeper("Alex", "Aquarium, part water, part dry pen"));
         keepers.add(new Keeper("Farhad", "Aviary"));
         keepers.add(new Keeper("Allan", "Petting Pen"));*/
+
+    }
+
+    private void addToFile (String keeperName, String keeperPens){
+        BufferedWriter bw = null;
+
+        try {
+            // APPEND MODE SET HERE
+            bw = new BufferedWriter(new FileWriter(file, true));
+            bw.write(keeperName + "," + keeperPens);
+            bw.newLine();
+            bw.flush();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {                       // always close the file
+            if (bw != null) try {
+                bw.close();
+            } catch (IOException ioe2) {
+                // just ignore it
+            }
+        } // end try/catch/finally
 
     }
 }

@@ -1,4 +1,7 @@
 Hardip,Dry pen
 Alex,Aquarium;Part Water Part Dry
 Farhad,Aviary
-Allen,Petting
+Alan,Petting
+Indiana Jones,Reptiles
+Marty McFly ,Butterfly House 
+Agent J,Alien Sanctuary
