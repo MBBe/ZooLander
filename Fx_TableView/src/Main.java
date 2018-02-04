@@ -9,12 +9,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.paint.Color;
+import javafx.scene.Group;
 
 public class Main extends Application {
 
@@ -30,8 +33,10 @@ public class Main extends Application {
         window = primaryStage;
 
 
+
+
         //Button 1&2 &3 FXMLLoader.load(getClass().getResource(
-        //Label label1 = new Label ("Animals at ZooLander Zoo");
+        Label label1 = new Label ("picture from www.derekwinnert.com/zoolander-classic-film-review-487/");
         Button button1 = new Button ("Animal");
         Button button2 = new Button ("Keepers");
         Button button3 = new Button ("Pens");
@@ -88,10 +93,35 @@ public class Main extends Application {
         //button2.setOnAction(e ->window.setScene(scene3));
         //button1.setOnAction(e -> window.setScene(scene2));
 
+        // load the image
+    javafx.scene.image.Image image = new javafx.scene.image.Image("download.jpg");
+
+    // simple displays ImageView the image as is
+    ImageView iv1 = new ImageView();
+        iv1.setImage(image);
+
+    Group root = new Group();
+    Scene scene = new Scene(root);
+        scene.setFill(Color.BLACK);
+    VBox box = new VBox();
+        box.getChildren().add(iv1);
+        root.getChildren().add(box);
+
+
+        window.setWidth(1000);
+        window.setHeight(300);
+        window.setScene(scene1);
+        window.sizeToScene();
+        window.show();
+
+
+
         //Layout 1 - children are laid out in vertical column
         HBox layout1 = new HBox(20);
-        layout1.getChildren().addAll(button1, button2, button3);
+        layout1.getChildren().addAll(iv1, button1, button2, button3, label1);
         scene1 = new Scene (layout1, 600, 300);
+
+
 
         //Button 4
        // Button button4 = new Button ("Keepers");
@@ -113,9 +143,13 @@ public class Main extends Application {
         //layout3.getChildren().addAll(label3, button5);
         //scene3 = new Scene(layout3, 600, 300);
 
+
+
         window.setScene(scene1);
         window.setTitle("Welcome to ZooLander Zoo- The World's no. 1 Internet Famous Zoo for really, really, really good looking Animals! ");
         window.show();
 
     }
+
+
 }

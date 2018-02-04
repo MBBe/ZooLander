@@ -10,3 +10,9 @@ Dry,Hippo,100,Alex
 Aviary,Owl,100,Farhad
 Dry,Dog,100,Hardip
 Cage,Eagle,50,Manasseh
+Aquarium,Mallot,50,Alex
+Ants Farm,Ants,1,Manasseh
+,,,
+Dry,cows,100,Manasseh
+,,,
+,,,

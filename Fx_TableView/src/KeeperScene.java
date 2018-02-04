@@ -17,6 +17,7 @@ public class KeeperScene extends Application {
     TextField KeeperNameInput, KeeperPensInput;
     String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\keeper.txt";
     ObservableList<Keeper> keepers = FXCollections.observableArrayList();
+    ObservableList<Keeper> keeperSelected, allKeepers;
 
     public static void main (String[] args) {
         launch(args);
@@ -60,7 +61,7 @@ public class KeeperScene extends Application {
         Button addButton = new Button("Add");
         addButton.setOnAction(e -> addButtonClicked());
         Button deleteButton = new Button("Delete");
-        //deleteButton.setOnAction(e ->deleteButtonClicked());
+        deleteButton.setOnAction(e ->deleteButtonClicked());
 
         //Choice Box
         //ChoiceBox<String> choiceBox =new ChoiceBox<>();
@@ -106,6 +107,16 @@ public class KeeperScene extends Application {
         KeeperNameInput.clear();
         KeeperPensInput.clear();
         showTable();
+
+    }
+
+    //Delete button clicked
+    public void deleteButtonClicked(){
+        //ObservableList<keeper> keeperSelected, allKeepers;
+        allKeepers = table.getItems();
+        keeperSelected = table.getSelectionModel().getSelectedItems();
+
+        keeperSelected.forEach(allKeepers::remove);
 
     }
 

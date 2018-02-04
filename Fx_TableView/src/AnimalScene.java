@@ -19,6 +19,7 @@ public class AnimalScene extends Application {
     TextField animalInput, PenInput, SizeInput, QuantityInput;
     String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
     ObservableList<Animal> animals = FXCollections.observableArrayList();
+    ObservableList<Animal> animalSelected, allAnimals;
 
     /*public static void main (String[] args) {
         launch(args);
@@ -74,7 +75,7 @@ public class AnimalScene extends Application {
         Button addButton = new Button("Add");
         addButton.setOnAction(e -> addButtonClicked());
         Button deleteButton = new Button("Delete");
-        //deleteButton.setOnAction(e ->deleteButtonClicked());
+        deleteButton.setOnAction(e ->deleteButtonClicked());
 
         //Choice Box
         //ChoiceBox<String> choiceBox =new ChoiceBox<>();
@@ -127,6 +128,16 @@ public class AnimalScene extends Application {
 
     }
 
+    //Delete button clicked
+    public void deleteButtonClicked(){
+        //ObservableList<Pen> animalSelected, allAnimals;
+        allAnimals = table.getItems();
+        animalSelected = table.getSelectionModel().getSelectedItems();
+
+        animalSelected.forEach(allAnimals::remove);
+
+    }
+
     //Get all of the products
     private void initializePens(){
 
@@ -174,5 +185,7 @@ public class AnimalScene extends Application {
         } // end try/catch/finally
 
     }
+
+
 }
 

@@ -17,6 +17,7 @@ public class PenScene extends Application {
     TableView<Pen> table;
     TextField nameInput, sizeInput, animalsInput, keeperInput;
     ObservableList<Pen> pens = FXCollections.observableArrayList();
+    ObservableList<Pen> penSelected, allPens, updatedPens;
     //ObservableList<Pen> penSelected, allPens;
     String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
 
@@ -132,11 +133,12 @@ public class PenScene extends Application {
 
     //Delete button clicked
     public void deleteButtonClicked(){
-        ObservableList<Pen> penSelected, allPens;
+        //ObservableList<Pen> penSelected, allPens;
         allPens = table.getItems();
         penSelected = table.getSelectionModel().getSelectedItems();
 
         penSelected.forEach(allPens::remove);
+
     }
 
     //Get all of the products
@@ -184,7 +186,11 @@ public class PenScene extends Application {
             }
         } // end try/catch/finally
 
+
+
     }
+
+
 
 
 
