@@ -1,12 +1,12 @@
 import javafx.scene.control.Alert;
 
-public class Pen {
+public class Pen extends Keeper {
 
 
-    private String Name;
-    private double Size;
-    private String Animal;
-    private String Keeper;
+    protected String Name;
+    protected double Size;
+    protected String Animal;
+    protected String Keeper;
 
     public Pen(){
         this.Name = "";

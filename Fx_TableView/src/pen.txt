@@ -1,18 +1,9 @@
-Dry,Sloths,100,Hardip
-Dry,Goats,100,Hardip
-Dry,Cats,100,Hardip
-Petting,Dogs,100,Alan
-Aviary,Owls,100,Farhad
-Aquarium,Dolphins,100,Alex
-Part Water Part Dry,Penguins,100,Alex
-Part Water Part Dry,Hippos,100,Alex
-Dry,Hippo,100,Alex
-Aviary,Owl,100,Farhad
-Dry,Dog,100,Hardip
-Cage,Eagle,50,Manasseh
-Aquarium,Mallot,50,Alex
-Ants Farm,Ants,1,Manasseh
-,,,
-Dry,cows,100,Manasseh
-,,,
-,,,
+Dry,Sloths,30,Hardip
+Dry,Goats,30,Hardip
+Dry,Cats,30,Hardip
+Petting,Dogs,30,Alan
+Aviary,Owls,30,Farhad
+Aquarium,Dolphins,30,Alex
+Part Water Part Dry,Penguins,30,Alex
+Part Water Part Dry,Hippos,30,Alex
+

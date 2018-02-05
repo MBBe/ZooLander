@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
-public class PenScene extends Application {
+public class PenScene extends Application  {
 
     Stage window;
     TableView<Pen> table;
@@ -93,12 +93,15 @@ public class PenScene extends Application {
 
 
         table = new TableView<>();
+        Label label1 = new Label("All new Pens made are 30 meters squared. Part Wet and Part Dry Pens are 10 meters squared and 20 meters cubed. Aviary is...");
+        label1.setPadding(new Insets(15,15,15,15));
+
 
         table.setItems(pens);
         table.getColumns().addAll(NameColumn, SizeColumn, AnimalColumn, KeeperColumn);
 
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(table, hBox);
+        vBox.getChildren().addAll(table, hBox, label1);
 
         Scene scene = new Scene(vBox);
         window.setScene(scene);

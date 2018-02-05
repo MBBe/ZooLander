@@ -51,9 +51,9 @@ public class AnimalScene extends Application {
         PenSizeColumn.setCellValueFactory(new PropertyValueFactory<>("AnimalSize"));
 
         //Quantity column
-        TableColumn<Animal, String> QuantityColumn = new TableColumn<>("Quantity");
+        TableColumn<Animal, String> QuantityColumn = new TableColumn<>("Pen ID");
         QuantityColumn.setMinWidth(100);
-        QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
+        QuantityColumn.setCellValueFactory(new PropertyValueFactory<>("Pen ID"));
 
         //Name input
         //animalInput, PenInput, SizeInput, QuantityInput
@@ -116,7 +116,7 @@ public class AnimalScene extends Application {
         animal.setAnimal(animalInput.getText());
         animal.setPenType(PenInput.getText());
         animal.setAnimalSize(Double.parseDouble(SizeInput.getText()));
-        animal.setQuantity(Integer.parseInt(QuantityInput.getText()));
+        animal.setpenID(Integer.parseInt(QuantityInput.getText()));
 
         animals.add(animal);
         addToFile(animalInput.getText(), PenInput.getText(), SizeInput.getText(), QuantityInput.getText());
@@ -186,7 +186,7 @@ public class AnimalScene extends Application {
 
     }
 
-
+    //Animal Cat = new Animal
 
 
 }
