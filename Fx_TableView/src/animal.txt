@@ -6,3 +6,4 @@ Owls,Aviary,20,3
 Dolphins,Aquarium,40,4
 Hippos,Part Water Part Dry,10,5
 Cats,Petting,4,6
+Dog,Dry,3.5,1

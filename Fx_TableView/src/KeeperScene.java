@@ -120,6 +120,8 @@ public class KeeperScene extends Application {
 
     }
 
+
+
     //Get all of the products
     private void initializePen(){
 
@@ -160,4 +162,6 @@ public class KeeperScene extends Application {
         } // end try/catch/finally
 
     }
+
+
 }

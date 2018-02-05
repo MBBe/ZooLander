@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
@@ -103,9 +104,12 @@ public class Main extends Application {
     Group root = new Group();
     Scene scene = new Scene(root);
         scene.setFill(Color.BLACK);
-    VBox box = new VBox();
-        box.getChildren().add(iv1);
-        root.getChildren().add(box);
+    VBox box2 = new VBox();
+        box2.getChildren().add(iv1);
+        root.getChildren().add(box2);
+        //AnchorPane anchorpane = new AnchorPane();
+        //anchorpane.getChildren().addAll(box2, label1); // Add grid from Example 1-5
+        //AnchorPane.setBottomAnchor(box2, 8.0);
 
 
         window.setWidth(1000);

@@ -19,9 +19,9 @@ public class PenScene extends Application {
     ObservableList<Pen> pens = FXCollections.observableArrayList();
     ObservableList<Pen> penSelected, allPens, updatedPens;
     //ObservableList<Pen> penSelected, allPens;
-    String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
+    String file = "C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\pen.txt";
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         launch(args);
     }
 
@@ -33,7 +33,7 @@ public class PenScene extends Application {
         showTable();
     }
 
-    private void showTable (){
+    private void showTable() {
 
         //Name column
         TableColumn<Pen, String> NameColumn = new TableColumn<>("Pen Type");
@@ -77,7 +77,7 @@ public class PenScene extends Application {
         Button addButton = new Button("Add");
         addButton.setOnAction(e -> addButtonClicked());
         Button deleteButton = new Button("Delete");
-        deleteButton.setOnAction(e ->deleteButtonClicked());
+        deleteButton.setOnAction(e -> deleteButtonClicked());
 
         //Choice Box
         //ChoiceBox<String> choiceBox =new ChoiceBox<>();
@@ -87,7 +87,7 @@ public class PenScene extends Application {
         //choiceBox.setValue("Animal");
 
         HBox hBox = new HBox();
-        hBox.setPadding(new Insets(20,20,20,20));
+        hBox.setPadding(new Insets(20, 20, 20, 20));
         hBox.setSpacing(10);
         hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, keeperInput, addButton, deleteButton);
 
@@ -107,13 +107,13 @@ public class PenScene extends Application {
     }
 
     //get the value of the item from the choice Box
-     private void getChoice(ChoiceBox<String> choiceBox){
+    private void getChoice(ChoiceBox<String> choiceBox) {
         String food = choiceBox.getValue();
         System.out.print(food);
     }
 
     //Add button clicked
-    public void addButtonClicked(){
+    public void addButtonClicked() {
         Pen pen = new Pen();
         pen.setName(nameInput.getText());
         pen.setAnimal(animalsInput.getText());
@@ -132,7 +132,7 @@ public class PenScene extends Application {
     }
 
     //Delete button clicked
-    public void deleteButtonClicked(){
+    public void deleteButtonClicked() {
         //ObservableList<Pen> penSelected, allPens;
         allPens = table.getItems();
         penSelected = table.getSelectionModel().getSelectedItems();
@@ -140,6 +140,9 @@ public class PenScene extends Application {
         penSelected.forEach(allPens::remove);
 
     }
+
+
+
 
     //Get all of the products
     private void initializePen(){
@@ -156,6 +159,8 @@ public class PenScene extends Application {
         }catch(Exception e){
 
         }
+
+
 
 
         /*pens.add(new Pen("Dry", "Sloths", 100));

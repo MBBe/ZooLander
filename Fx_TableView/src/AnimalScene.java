@@ -135,7 +135,7 @@ public class AnimalScene extends Application {
         animalSelected = table.getSelectionModel().getSelectedItems();
 
         animalSelected.forEach(allAnimals::remove);
-
+        //addToFile(allAnimals);
     }
 
     //Get all of the products
@@ -185,6 +185,8 @@ public class AnimalScene extends Application {
         } // end try/catch/finally
 
     }
+
+
 
 
 }
