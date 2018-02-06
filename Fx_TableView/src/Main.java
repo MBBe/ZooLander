@@ -10,10 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,7 +20,8 @@ import javafx.scene.Group;
 public class Main extends Application {
 
     Stage window;
-    Scene scene1, scene2, scene3;
+    //Scene scene1, scene2, scene3;
+
 
     public static void main (String[] args) {
         launch(args);
@@ -37,7 +35,7 @@ public class Main extends Application {
 
 
         //Button 1&2 &3 FXMLLoader.load(getClass().getResource(
-        Label label1 = new Label ("picture from www.derekwinnert.com/zoolander-classic-film-review-487/");
+        Label label1 = new Label ("picture from 2016.Zoolander 2. [poster] Available at:<http://www.imdb.com/title/tt1608290/mediaviewer/rm243851520> [Accessed 5 February 2018 ]");
         Button button1 = new Button ("Animal");
         Button button2 = new Button ("Keepers");
         Button button3 = new Button ("Pens");
@@ -94,26 +92,47 @@ public class Main extends Application {
         //button2.setOnAction(e ->window.setScene(scene3));
         //button1.setOnAction(e -> window.setScene(scene2));
 
-        // load the image
-    javafx.scene.image.Image image = new javafx.scene.image.Image("download.jpg");
+        /*Group root = new Group();
+        /*Scene scene = new Scene(root);
+        /*scene.setFill(Color.BLACK);
 
-    // simple displays ImageView the image as is
-    ImageView iv1 = new ImageView();
+        // load the image
+        javafx.scene.image.Image image = new javafx.scene.image.Image("Zoolander3.jpg");
+
+        // simple displays ImageView the image as is
+        ImageView iv1 = new ImageView();
         iv1.setImage(image);
 
-    Group root = new Group();
-    Scene scene = new Scene(root);
-        scene.setFill(Color.BLACK);
-    VBox box2 = new VBox();
-        box2.getChildren().add(iv1);
-        root.getChildren().add(box2);
+        BorderPane border = new BorderPane();
+        HBox box1 = new HBox();
+        box1.getChildren().addAll(iv1);
+        //box1.setPadding(new Insets(20, 20, 20, 20));
+        VBox layout1 = new VBox(20, button1, button2, button3);
+        root.getChildren().add(box1);
         //AnchorPane anchorpane = new AnchorPane();
         //anchorpane.getChildren().addAll(box2, label1); // Add grid from Example 1-5
-        //AnchorPane.setBottomAnchor(box2, 8.0);
+        //AnchorPane.setBottomAnchor(box2, 8.0);*/
+
+        // load the image
+        javafx.scene.image.Image image = new javafx.scene.image.Image("Zoolander3.jpg");
+
+        // simple displays ImageView the image as is
+        ImageView iv1 = new ImageView();
+        iv1.setImage(image);
+
+        Group root = new Group();
+        Scene scene1 = new Scene(root);
+
+        HBox box = new HBox();
+        box.getChildren().addAll(iv1);
+        VBox box2 = new VBox();
+        box2.getChildren().addAll(button1, button2, button3, label1);
+
+        root.getChildren().addAll(box, box2);
 
 
-        window.setWidth(1000);
-        window.setHeight(300);
+        window.setWidth(400);
+        window.setHeight(500);
         window.setScene(scene1);
         window.sizeToScene();
         window.show();
@@ -121,9 +140,9 @@ public class Main extends Application {
 
 
         //Layout 1 - children are laid out in vertical column
-        HBox layout1 = new HBox(20);
-        layout1.getChildren().addAll(iv1, button1, button2, button3, label1);
-        scene1 = new Scene (layout1, 600, 300);
+
+        //layout1.getChildren().addAll(iv1, label1);
+        //scene1 = new Scene (layout1, 500, 300);
 
 
 
