@@ -134,7 +134,7 @@ public class City
 	@Override
 	public String toString()
 	{
-		return "[ID=" + getID() + ", Name=" + getName() + ", Country Code=" + getCountry() + ", Coord="
-				+ getCoordinates() + ", Sun=" + getSun() + "]";
+		return "[ID=" + getID() + ", Name=" + getName() + ", \nCountry Code=" + getCountry() + ", Coord="
+				+ getCoordinates() + ", \nSun=" + getSun() + "]";
 	}
 }

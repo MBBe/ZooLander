@@ -135,16 +135,33 @@ public class Main extends Application {
         box.getChildren().addAll(iv1);
 
         Weather Current = new Weather ();
-        Label Tempreture = new Label ("Temperature" + Current.getTemperature());
-        Tempreture.setTextFill(Color.WHITE);
-        Label Description = new Label ("The Weather today" + Current.getDescription());
-        Description.setTextFill(Color.BLUE);
-        Label City = new Label ("City" + Current.getDescription());
+        Label City = new Label ("City" + Current.getCity());
         City.setTextFill(Color.BLUE);
+
+        Label Description = new Label (Current.getDescription());
+        Description.setTextFill(Color.SNOW);
+
+        Label Temperature = new Label ("Temperature" + Current.getTemperature());
+        Temperature.setTextFill(Color.SNOW);
+
+        //Label Sun = new Label ("Sunshine" + Current.getSun());
+        //Sun.setTextFill(Color.DARKGREEN);
+
+        Label Clouds = new Label ("Clouds" + Current.getClouds());
+        Clouds.setTextFill(Color.DARKGREEN);
+
+        Label Humidity = new Label ("Humidity" + Current.getHumidity());
+        Humidity.setTextFill(Color.DARKGREEN);
+
+        Label LastUpdate = new Label ("Last weather update" + Current.getLastUpdate());
+        LastUpdate.setTextFill(Color.DARKGREEN);
+
+
 
 
         VBox box2 = new VBox();
-        box2.getChildren().addAll(button1, button2, button3,Tempreture, Description, City);
+        box2.getChildren().addAll(button1, button2, button3, LastUpdate, City,  Description, Temperature, Humidity, Clouds);
+        box2.setPadding(new Insets (5, 5, 5, 5));
         HBox box3 = new HBox(8);
         //box3.getChildren().add(label1);
 

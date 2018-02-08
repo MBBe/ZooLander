@@ -38,4 +38,22 @@ public class Weather {
         return data.getCity().toString();
     }
 
+    public String getSun(){
+        return data.getSun().toString();
+    }
+
+    public String getHumidity(){
+        return data.getHumidity(). toString();
+    }
+
+    public String getClouds(){
+        return data.getClouds().toString();
+    }
+
+    public String getLastUpdate(){
+        return data.getLastUpdate().toString();
+    }
+
+
+
 }

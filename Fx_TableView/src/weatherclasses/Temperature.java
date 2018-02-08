@@ -123,7 +123,7 @@ public class Temperature
 	@Override
 	public String toString()
 	{
-		return "[Current=" + getValue() + "] [Minimal=" + getMin() + "] [Maximal=" + getMax() + "] [Unit=" + getUnit()
+		return "[Current=" + getValue() + "] [Minimal=" + getMin() + "] \n[Maximal=" + getMax() + "] [Unit=" + getUnit()
 				+ "]";
 	}
 }
