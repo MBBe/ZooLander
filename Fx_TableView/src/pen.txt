@@ -6,4 +6,4 @@ Aviary,Owls,30,Farhad
 Aquarium,Dolphins,30,Alex
 Part Water Part Dry,Penguins,30,Alex
 Part Water Part Dry,Hippos,30,Alex
-
+Butterfly House,Butterflies,30.0,

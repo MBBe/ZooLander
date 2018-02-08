@@ -11,20 +11,28 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.paint.Color;
 import javafx.scene.Group;
 
+import java.awt.*;
+
+import static javafx.geometry.Pos.BOTTOM_LEFT;
+
 public class Main extends Application {
 
     Stage window;
+
     //Scene scene1, scene2, scene3;
 
 
     public static void main (String[] args) {
         launch(args);
+
+
     }
 
     @Override
@@ -35,10 +43,10 @@ public class Main extends Application {
 
 
         //Button 1&2 &3 FXMLLoader.load(getClass().getResource(
-        Label label1 = new Label ("picture from 2016.Zoolander 2. [poster] Available at:<http://www.imdb.com/title/tt1608290/mediaviewer/rm243851520> [Accessed 5 February 2018 ]");
-        Button button1 = new Button ("Animal");
-        Button button2 = new Button ("Keepers");
-        Button button3 = new Button ("Pens");
+        //Label label1 = new Label ("picture from 2016.Zoolander 2. [poster] Available at:<http://www.imdb.com/title/tt1608290/mediaviewer/rm243851520> [Accessed 5 February 2018 ]");
+        Button button1 = new Button ("Animal Infomation");
+        Button button2 = new Button ("Keepers Information");
+        Button button3 = new Button ("Pens Information");
         AnimalScene animalScene = new AnimalScene ();
 
         button1.setOnAction(new EventHandler<ActionEvent>() {
@@ -125,10 +133,29 @@ public class Main extends Application {
 
         HBox box = new HBox();
         box.getChildren().addAll(iv1);
-        VBox box2 = new VBox();
-        box2.getChildren().addAll(button1, button2, button3, label1);
 
-        root.getChildren().addAll(box, box2);
+        Weather Current = new Weather ();
+        Label Tempreture = new Label ("Temperature" + Current.getTemperature());
+        Tempreture.setTextFill(Color.WHITE);
+        Label Description = new Label ("The Weather today" + Current.getDescription());
+        Description.setTextFill(Color.BLUE);
+        Label City = new Label ("City" + Current.getDescription());
+        City.setTextFill(Color.BLUE);
+
+
+        VBox box2 = new VBox();
+        box2.getChildren().addAll(button1, button2, button3,Tempreture, Description, City);
+        HBox box3 = new HBox(8);
+        //box3.getChildren().add(label1);
+
+
+
+        root.getChildren().addAll(box, box2, box3);
+
+
+
+
+
 
 
         window.setWidth(400);
@@ -139,38 +166,13 @@ public class Main extends Application {
 
 
 
-        //Layout 1 - children are laid out in vertical column
-
-        //layout1.getChildren().addAll(iv1, label1);
-        //scene1 = new Scene (layout1, 500, 300);
-
-
-
-        //Button 4
-       // Button button4 = new Button ("Keepers");
-       // button4.setOnAction(e -> window.setScene(scene3));
-
-        //Layout 2
-        //Label label2 = new Label ("Animal at ZooLander Zoo");
-        //HBox layout2 = new HBox(300);
-        //layout2.getChildren().addAll(label2, button2);
-        //scene2 = new Scene(layout2, 600, 300);
-
-        //Button 5
-        //Button button5 = new Button ("Back to Animal");
-        //button5.setOnAction(e -> window.setScene(scene1));
-
-        //Layout 3
-        //Label label3 = new Label ("Keepers and ZooLander Zoo");
-        //HBox layout3 = new HBox(300);
-        //layout3.getChildren().addAll(label3, button5);
-        //scene3 = new Scene(layout3, 600, 300);
-
 
 
         window.setScene(scene1);
         window.setTitle("Welcome to ZooLander Zoo- The World's no. 1 Internet Famous Zoo for really, really, really good looking Animals! ");
         window.show();
+
+
 
     }
 

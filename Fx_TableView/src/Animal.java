@@ -3,21 +3,21 @@ public class Animal extends Pen {
     private String Animal;
     private String PenType;
     private double AnimalSize;
-    private int penID;
+    private int PenID;
     private double allAnimal;
 
     public Animal() {
         this.Animal = "";
         this.PenType = "";
         this.AnimalSize = 0;
-        this.penID = 0;
+        this.PenID = 0;
     }
 
-    public Animal(String Animal, String PenType, double AnimalSize, int Quantity) {
+    public Animal(String Animal, String PenType, double AnimalSize, int PenID) {
         this.Animal = Animal;
         this.PenType = PenType;
         this.AnimalSize = AnimalSize;
-        this.penID = penID;
+        this.PenID = PenID;
     }
 
     public String getAnimal() {
@@ -50,13 +50,13 @@ public class Animal extends Pen {
         this.AnimalSize = AnimalSize;
     }
 
-    public int getpenID() {
-        return penID;
+    public int getPenID() {
+        return PenID;
     }
 
-    public void setpenID(int penID) {
+    public void setPenID(int PenID) {
 
-        this.penID = penID;
+        this.PenID = PenID;
     }
 
     public void addAnimals() {
