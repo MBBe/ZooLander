@@ -1,7 +1,7 @@
 public class Animal extends Pen {
 
     private String Animal;
-    private String PenType;
+    protected String PenType;
     private double AnimalSize;
     private int PenID;
     private double allAnimal;

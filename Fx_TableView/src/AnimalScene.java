@@ -53,7 +53,7 @@ public class AnimalScene extends Application {
         //PenID column
         TableColumn<Animal, String> PenIDColumn = new TableColumn<>("Pen ID");
         PenIDColumn.setMinWidth(100);
-        PenIDColumn.setCellValueFactory(new PropertyValueFactory<>("Pen ID"));
+        PenIDColumn.setCellValueFactory(new PropertyValueFactory<>("PenID"));
 
         //Name input
         //animalInput, PenInput, SizeInput, QuantityInput

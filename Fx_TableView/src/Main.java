@@ -47,6 +47,7 @@ public class Main extends Application {
         Button button1 = new Button ("Animal Infomation");
         Button button2 = new Button ("Keepers Information");
         Button button3 = new Button ("Pens Information");
+        Button button4 = new Button ("The Zoo");
         AnimalScene animalScene = new AnimalScene ();
 
         button1.setOnAction(new EventHandler<ActionEvent>() {
@@ -86,6 +87,21 @@ public class Main extends Application {
                     Stage s3 = new Stage();
                     PenScene c = new PenScene();
                     c.start(s3);
+                }catch(Exception e){
+
+                }
+                //setLoggedInUser(textUser.getText());
+                //stage.close(); // return to main window
+            }
+        });
+
+        button4.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                //System.out.println("Animal");
+                try {
+                    Stage s4 = new Stage();
+                    ZooScene d = new ZooScene();
+                    d.start(s4);
                 }catch(Exception e){
 
                 }
@@ -154,13 +170,13 @@ public class Main extends Application {
         Humidity.setTextFill(Color.DARKGREEN);
 
         Label LastUpdate = new Label ("Last weather update" + Current.getLastUpdate());
-        LastUpdate.setTextFill(Color.DARKGREEN);
+        LastUpdate.setTextFill(Color.SNOW);
 
 
 
 
         VBox box2 = new VBox();
-        box2.getChildren().addAll(button1, button2, button3, LastUpdate, City,  Description, Temperature, Humidity, Clouds);
+        box2.getChildren().addAll(button1, button2, button3, button4, LastUpdate, City,  Description, Temperature, Humidity, Clouds);
         box2.setPadding(new Insets (5, 5, 5, 5));
         HBox box3 = new HBox(8);
         //box3.getChildren().add(label1);

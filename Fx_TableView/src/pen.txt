@@ -1,9 +1,8 @@
-Dry,Sloths,30,Hardip
-Dry,Goats,30,Hardip
-Dry,Cats,30,Hardip
-Petting,Dogs,30,Alan
-Aviary,Owls,30,Farhad
-Aquarium,Dolphins,30,Alex
-Part Water Part Dry,Penguins,30,Alex
-Part Water Part Dry,Hippos,30,Alex
-Butterfly House,Butterflies,30.0,
+Dry,Sloths,12,Hardip
+Dry,Goats,12,Hardip
+Dry,Cats,16,Hardip
+Petting,Dogs,14,Alan
+Aviary,Owls,80,Farhad
+Aquarium,Dolphins,160,Alex
+Part Water Part Dry,Penguins,24,Alex
+Part Water Part Dry,Hippos,120,Alex
