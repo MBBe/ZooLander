@@ -128,7 +128,7 @@ public class ZooScene extends Application  {
 
 
         table = new TableView<>();
-        Label label1 = new Label("This Pen is full. The Last animal is: ");
+        Label label1 = new Label("This Pen is full and has no Keeper. The Last animal is: ");
         label1.setPadding(new Insets(10,10,10,10));
 
         Label label2 = new Label ("");
@@ -185,7 +185,7 @@ public class ZooScene extends Application  {
 
     //Delete button clicked
     public void deleteButtonClicked() {
-        //ObservableList<Pen> penSelected, allPens;
+
         allZooPens = table.getItems();
         ZooPenSelected = table.getSelectionModel().getSelectedItems();
 
@@ -216,20 +216,20 @@ public class ZooScene extends Application  {
         BufferedWriter bw = null;
 
         try {
-            // APPEND MODE SET HERE
+
             bw = new BufferedWriter(new FileWriter(file, true));
             bw.write(PenName + "," + PenType + "," + Animal1 + "," + Animal2 + "," + Animal3 + "," + Animal4 + "," + Keeper);
             bw.newLine();
             bw.flush();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        } finally {                       // always close the file
+        } finally {
             if (bw != null) try {
                 bw.close();
             } catch (IOException ioe2) {
-                // just ignore it
+
             }
-        } // end try/catch/finally
+        }
 
 
 

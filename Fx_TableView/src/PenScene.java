@@ -78,22 +78,29 @@ public class PenScene extends Application  {
         addButton.setOnAction(e -> addButtonClicked());
         Button deleteButton = new Button("Delete");
         deleteButton.setOnAction(e -> deleteButtonClicked());
+        Button AutoFill = new Button ("Auto Fill");
+
 
         //Choice Box
-        //ChoiceBox<String> choiceBox =new ChoiceBox<>();
+        ChoiceBox<String> choiceBox =new ChoiceBox<>();
         //get Items returns the ObservableList
-        //choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
+        choiceBox.getItems().addAll("Sloths", "Goats", "Cats", "Dogs", "Owls", "Dolphins", "Penguins", "Hippos",
+                                    "Hardip", "Alex", "Alan", "Farhad", "Agent J", "Marty McFly", "Indiana Jones");
         //set default Value
-        //choiceBox.setValue("Animal");
+        choiceBox.setValue("Sloths");
+        AutoFill.setOnAction(e -> AutoFillClicked(choiceBox));
+
+
+
 
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20, 20, 20, 20));
         hBox.setSpacing(10);
-        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, keeperInput, addButton, deleteButton);
+        hBox.getChildren().addAll(nameInput, sizeInput, animalsInput, keeperInput, addButton, deleteButton, choiceBox, AutoFill);
 
 
         table = new TableView<>();
-        Label label1 = new Label("All new Pens made are 30 meters squared. Part Wet and Part Dry Pens are 10 meters squared and 20 meters cubed. Aviary is...");
+        Label label1 = new Label("");
         label1.setPadding(new Insets(15,15,15,15));
 
 
@@ -109,11 +116,6 @@ public class PenScene extends Application  {
 
     }
 
-    //get the value of the item from the choice Box
-    private void getChoice(ChoiceBox<String> choiceBox) {
-        String food = choiceBox.getValue();
-        System.out.print(food);
-    }
 
     //Add button clicked
     public void addButtonClicked() {
@@ -144,6 +146,12 @@ public class PenScene extends Application  {
 
     }
 
+    //AutoFill button clicked
+    private void AutoFillClicked (ChoiceBox <String> choiceBox){
+        String Zoo = choiceBox.getValue();
+        System.out.print(Zoo);
+    }
+
 
 
 
@@ -153,9 +161,9 @@ public class PenScene extends Application  {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // process the line.
+
                 String[] s=line.split(",");
-                //Double[] d=line.split(",");
+
                 double penSize = Double.parseDouble(s[2]);
                 pens.add(new Pen(s[0],s[1],s[3],penSize));
             }
@@ -164,35 +172,25 @@ public class PenScene extends Application  {
         }
 
 
-
-
-        /*pens.add(new Pen("Dry", "Sloths", 100));
-        pens.add(new Pen("Dry", "Goats", 100));
-        pens.add(new Pen("Dry", "Cats",100));
-        pens.add(new Pen("Petting", "Dogs",100));
-        pens.add(new Pen("Aviary", "Owls", 100));
-        pens.add(new Pen("Aquarium", "Dolphins", 100));
-        pens.add(new Pen("Part wet, Part dry", "Penguins", 100));
-        pens.add(new Pen("Part wet, Part dry", "Hippos", 100));*/
     }
     private void addToFile (String name, String animal, String size, String keeper){
         BufferedWriter bw = null;
 
         try {
-            // APPEND MODE SET HERE
+
             bw = new BufferedWriter(new FileWriter(file, true));
             bw.write(name + "," + animal + "," + size + "," + keeper);
             bw.newLine();
             bw.flush();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        } finally {                       // always close the file
+        } finally {
             if (bw != null) try {
                 bw.close();
             } catch (IOException ioe2) {
-                // just ignore it
+
             }
-        } // end try/catch/finally
+        }
 
 
 

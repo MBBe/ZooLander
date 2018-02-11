@@ -12,3 +12,5 @@ Whale Pen,Aquarium,Jack,Annie,Harry,Sally,Alex
 2nd Hippo Pen,Part Wet Part Dry,Sam,Paulina,Jane,Lillybet,Alex
 2nd Whale Pen,Aquarium,William,Lorraine,Biff,George,
 b,PWPD,n,l,o,pat,Alex
+2nd Goat Pen,Dry,Derek,Jessie,Amanda,Luke,
+Sharing Pen,Petting,Lucky (Dog),Spot (dog),Maggie (Goat),Flynn (Goat),Alan

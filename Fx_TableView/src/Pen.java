@@ -1,4 +1,4 @@
-import javafx.scene.control.Alert;
+
 
 public class Pen extends Keeper {
 
@@ -60,21 +60,6 @@ public class Pen extends Keeper {
         this.Keeper = Keeper;
     }
 
-    /*private void ZooSize(double zoo) {
 
-        double zoo;
-        zoo = 200 ;
-
-        switch (200) {
-            case 200:
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Oh no!....");
-                alert.setHeaderText("ZooLander Zoo is Full");
-                alert.setContentText("No more Pens can be added");
-
-                alert.showAndWait();
-        }
-    }*/
 
 }

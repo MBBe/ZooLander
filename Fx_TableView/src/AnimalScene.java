@@ -14,16 +14,14 @@ import java.io.*;
 public class AnimalScene extends Application {
 
     Stage window;
-    //Scene scene1, scene2;
+
     TableView<Animal> table;
     TextField animalInput, PenInput, SizeInput, PenIDInput;
     String file="C:\\Users\\a-mboyd\\Documents\\Intellij Projects\\Fx_TableView\\src\\animal.txt";
     ObservableList<Animal> animals = FXCollections.observableArrayList();
     ObservableList<Animal> animalSelected, allAnimals;
 
-    /*public static void main (String[] args) {
-        launch(args);
-    }*/
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -51,7 +49,7 @@ public class AnimalScene extends Application {
         PenSizeColumn.setCellValueFactory(new PropertyValueFactory<>("AnimalSize"));
 
         //PenID column
-        TableColumn<Animal, String> PenIDColumn = new TableColumn<>("Pen ID");
+        TableColumn<Animal, String> PenIDColumn = new TableColumn<>("Quantity");
         PenIDColumn.setMinWidth(100);
         PenIDColumn.setCellValueFactory(new PropertyValueFactory<>("PenID"));
 
@@ -77,12 +75,6 @@ public class AnimalScene extends Application {
         Button deleteButton = new Button("Delete");
         deleteButton.setOnAction(e ->deleteButtonClicked());
 
-        //Choice Box
-        //ChoiceBox<String> choiceBox =new ChoiceBox<>();
-        //get Items returns the ObservableList
-        //choiceBox.getItems().addAll("Animal", "Pen", "Size", "Quantity");
-        //set default Value
-        //choiceBox.setValue("Animal");
 
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20,20,20,20));
@@ -104,11 +96,7 @@ public class AnimalScene extends Application {
 
     }
 
-    //get the value of the item from the choice Box
-    /*private void getChoice(ChoiceBox<String> choiceBox){
-        String food = choiceBox.getValue();
-        System.out.print(food);
-    }*/
+
 
     //Add button clicked
     public void addButtonClicked(){
@@ -154,60 +142,31 @@ public class AnimalScene extends Application {
 
         }
 
-        /*animals.add(new Animal("Sloths", "Dry", 3.00, 5));
-        animals.add(new Animal("Penguins", "Part Water, part dry", 2.0, 20));
-        animals.add(new Animal("Goats", "Dry", 3.00, 4));
-        animals.add(new Animal("Dogs", "Petting", 3.5, 7));
-        animals.add(new Animal("Owls", "Aviary", 20, 3));
-        animals.add(new Animal("Dolphins", "Aquarium", 40, 4));
-        animals.add(new Animal("Hippos", "Part Water, part dry", 10, 5));
-        animals.add(new Animal("Cats", "Petting", 4.0, 6));
-        animals.add(new Animal("Elephants", "Dry", 405.00, 5));*/
+
     }
 
     private void addToFile (String animal, String penType, String animalSize, String PenID){
         BufferedWriter bw = null;
 
         try {
-            // APPEND MODE SET HERE
+
             bw = new BufferedWriter(new FileWriter(file, true));
             bw.write(animal + "," + penType + "," + animalSize + "," + PenID);
             bw.newLine();
             bw.flush();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        } finally {                       // always close the file
+        } finally {
             if (bw != null) try {
                 bw.close();
             } catch (IOException ioe2) {
-                // just ignore it
+
             }
-        } // end try/catch/finally
+        }
 
     }
 
-    //Animal Cat = new Animal -- deleteFromFile
 
-   /* private void deleteFromFile (String animal, String penType, String animalSize, String quantity){
-        BufferedWriter bw = null;
-
-        try {
-            // APPEND MODE SET HERE
-            bw = new BufferedWriter(new FileWriter(file, true));
-            bw.write(animal + "," + penType + "," + animalSize + "," + quantity);
-            bw.newLine();
-            bw.flush();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } finally {                       // always close the file
-            if (bw != null) try {
-                bw.close();
-            } catch (IOException ioe2) {
-                // just ignore it
-            }
-        } // end try/catch/finally
-
-    }*/
 
 
 }
